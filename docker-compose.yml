@@ -1,0 +1,9 @@
+version: '1.0'
+services:
+  Hello:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "8888:8000"
