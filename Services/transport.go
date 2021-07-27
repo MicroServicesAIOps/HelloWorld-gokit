@@ -21,3 +21,13 @@ func HelloEncodeResponse(c context.Context, w http.ResponseWriter, response inte
 
 	return json.NewEncoder(w).Encode(response)
 }
+
+func HealthDecodeRequest(c context.Context, request *http.Request) (interface{}, error) {
+	return struct{}{}, nil
+}
+
+func HealthEncodeResponse(ctx context.Context, w http.ResponseWriter, response interface{}) error {
+	w.Header().Set("Content-Type", "application/json;charset=utf-8")
+
+	return json.NewEncoder(w).Encode(response)
+}

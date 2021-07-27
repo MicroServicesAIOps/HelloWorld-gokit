@@ -6,9 +6,14 @@
 ```
 docker-compose up -d
 ```
+
+# Check
+
+You can check the health of the service via http://IP:8888/health
+
 # Test
 
-You can now access the service via http://IP:8888/?name=abc
+You can now access the service via http://IP:8888/hello?name=abc
 
 # Cleaning up
 

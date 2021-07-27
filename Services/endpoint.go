@@ -21,3 +21,18 @@ func MakeServerEndPointHello(s IMyService) endpoint.Endpoint {
 		return HelloResponse{Reply: s.Hello(r.Name)}, nil
 	}
 }
+
+type healthRequest struct {
+	//
+}
+
+type healthResponse struct {
+	Health []Health `json:"health"`
+}
+
+func MakeServerEndpointHealth(s IMyService) endpoint.Endpoint {
+	return func(ctx context.Context, request interface{}) (response interface{}, err error) {
+		health := s.Health()
+		return healthResponse{Health: health}, nil
+	}
+}
